@@ -1,0 +1,11 @@
+{
+  "name": "punkbeer-clone",
+  "version": "1.0.0",
+  "description":
+    "Using the punk beer api to create a unique project that show data on the page. ",
+  "main": "index.js",
+  "repository": "git@github.com:Bobslegend61/punkbeer-clone.git",
+  "author": "Alabi Emmanuel <bobslegend795@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
