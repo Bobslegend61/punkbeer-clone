@@ -51,7 +51,7 @@ a {
     height: auto;
 }
 
-@media(min-width: 800px) {
+@media(min-width: 767px) {
     .favourite {
         grid-template-columns: repeat(5, 1fr);
     }

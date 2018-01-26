@@ -6,10 +6,10 @@ const Favourite = (props) => {
     let contentLoad;
     if(props.beers !== "") {
         let favourite = props.beers.filter(beer => (props.favouriteId.indexOf(beer.id) !== -1));
-        contentLoad = favourite.length === 0 ? "No don't have any favoutite item on you list." : favourite.map((beer) => {
+        contentLoad = favourite.length === 0 ? "You don't have any favoutite item on you list." : favourite.map((beer) => {
             return (
                 <div className="card" key={beer.id}>
-                    <i className={`fa fa-heart`}></i>
+                    <i className={`fa fa-heart`} onClick={() => props.addFavourite(beer.id)}></i>
                     <div className="image">
                         <img src={beer["image_url"]} alt={beer.name} />
                     </div>

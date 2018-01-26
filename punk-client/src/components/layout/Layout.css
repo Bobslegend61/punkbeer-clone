@@ -65,7 +65,7 @@ nav {
     box-shadow: -2px 3px 3px rgb(141, 139, 139);
 }
 
-@media(min-width: 800px) {
+@media(min-width: 767px) {
     .search input[type="submit"] {
         width: 50%;
         margin: auto;

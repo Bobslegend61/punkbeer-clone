@@ -29,6 +29,7 @@ const Home = (props) => {
     return (
         <div className="home">
             {contentLoad ? contentLoad : ""}
+            <button type="button" onClick={ () => props.buttonClicked() }>Load More</button>
         </div>
     )
 }
