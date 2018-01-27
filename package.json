@@ -2,7 +2,7 @@
   "name": "punkbeer-clone",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://bobslegend61.github.io/punkbeer-clone",
+  "homepage": "https://bobslegend61.github.io/punkbeer-clone",
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -13,11 +13,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": "git@github.com:Bobslegend61/punkbeer-clone.git",
   "author": "Alabi Emmanuel <bobslegend795@gmail.com>",
   "license": "MIT",
-  "description":
-    "Using the punk beer api to create a unique project that show data on the page. "
+  "description": "Using the punk beer api to create a unique project that show data on the page. ",
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
+  }
 }
