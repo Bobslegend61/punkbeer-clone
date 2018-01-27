@@ -1,7 +1,7 @@
 {
   "name": "punkbeer-clone",
   "version": "1.0.0",
-  "homepage" : "https://bobslegend61.github.io/punkbeer-clone/punk-client",
+  "homepage" : "https://bobslegend61.github.io/punkbeer-clone/",
   "description":
     "Using the punk beer api to create a unique project that show data on the page. ",
   "main": "index.js",
