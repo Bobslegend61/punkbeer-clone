@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Link, Route } from "react-router-dom";
+import { Switch, Link, Route, Redirect } from "react-router-dom";
 import Home from "../home/Home";
 import Favourite from "../favoutite/Favourite";
 import Beer from "../beer/Beer";
@@ -19,17 +19,6 @@ class Layout extends Component {
 
     componentDidMount() {
         fetch(`https://api.punkapi.com/v2/beers?page=${this.state.page}&per_page=40`).then(res => res.json()).then(data => this.setState({beers: data})).catch(err => console.log(err));
-        window.addEventListener("scroll", (e) => {
-            // console.log(e);
-        })
-    }
-
-    onFormSubmit(e) {
-        if(this.state.search.trim() === ""){
-            alert("Please field is required");
-            return false;
-        }
-        e.preventDefault();
     }
 
     inputChanged(e) {
@@ -83,16 +72,14 @@ class Layout extends Component {
                     </div>
                 </nav>
                 <div className="search">
-                    <form onSubmit={this.onFormSubmit.bind(this)}>
-                        <input type="search" placeholder="Search" onChange={this.inputChanged.bind(this)} value={this.state.search}/>
-                        <input type="submit" value="Submit" />
-                    </form>
+                    <input type="search" placeholder="Search" onChange={this.inputChanged.bind(this)} value={this.state.search}/>
+                    <Link to={"/search?q="+ this.state.search} hidden={ this.state.search.trim() === "" ? true : false }>Submit</Link>
                 </div>
                 <Switch>
                     <Route exact path="/" render={() => <Home buttonClicked={ this.buttonClicked.bind(this) } beers= {this.state.beers} favouriteId = {this.state.favouriteId} addFavourite = {this.addFavourite.bind(this)} />} />
                     <Route path="/favourites" render={() => <Favourite beers= {this.state.beers} favouriteId = {this.state.favouriteId} addFavourite = {this.addFavourite.bind(this)}/>}/>
                     <Route path="/beer/:id" render={(props) => <Beer {...props} beers= {this.state.beers} />}/>
-                    <Route path="/search" render= {(props) => <Search {...props} searchTerm={this.state.search} />}/>
+                    <Route path="/search" render= {(props) => (this.state.search === "" ? <Redirect to="/" /> :<Search {...props} searchTerm={this.state.search} />)}/>
                 </Switch>
             </div>
         )

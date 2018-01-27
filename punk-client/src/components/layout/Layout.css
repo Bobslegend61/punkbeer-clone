@@ -30,9 +30,6 @@ nav {
 
 .search {
     margin-top: 1.3em;
-}
-
-.search form {
     display: grid;
     grid-template-columns: 4fr 1fr;
     grid-gap: 5px;
@@ -50,7 +47,8 @@ nav {
     outline: none;
 }
 
-.search input[type="submit"] {
+.search a {
+    text-align: center;
     text-transform: uppercase;
     background-color: #fff;
     border: 1px solid #333;
@@ -59,16 +57,16 @@ nav {
     transition-duration: 500ms;
 }
 
-.search input[type="submit"]:hover {
+.search a:hover {
     background-color: darkcyan;
     color: #fff;
     box-shadow: -2px 3px 3px rgb(141, 139, 139);
 }
 
 @media(min-width: 767px) {
-    .search input[type="submit"] {
+    .search a {
         width: 50%;
         margin: auto;
-        height: 2.5em;
+        padding: 3px;
     }
 }

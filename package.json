@@ -1,6 +1,7 @@
 {
   "name": "punkbeer-clone",
   "version": "1.0.0",
+  "homepage" : "http://myname.github.io/punkbeer-clone/punk-client",
   "description":
     "Using the punk beer api to create a unique project that show data on the page. ",
   "main": "index.js",
